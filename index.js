@@ -18,7 +18,8 @@ bot.on('message', function (event) {
     console.log(msg);
   }).catch(error=>{
       console.log(error);
-  }).setTimeout(()=>{
+  });
+  setTimeout(()=>{
     var userId = id;
     var sendMsg = '快教我打字';
     bot.push(userId,sendMsg);
