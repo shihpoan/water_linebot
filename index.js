@@ -57,7 +57,7 @@ function _bot(){
                     }
                 });
                 if(replyMsg == ''){
-                    replyMsg = '媽你打錯地址了';
+                    replyMsg = '媽你打錯地址了 shit!!!';
                 }
             }
             else{
