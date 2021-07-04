@@ -56,6 +56,7 @@ function _bot(){
                     }
                     else{
                         replyMsg = '媽你打錯地址了';
+                        console.log(e[0]);
                     }
                 });
             }
