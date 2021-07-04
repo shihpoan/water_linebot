@@ -16,15 +16,15 @@ bot.on('message', function (event) {
   var id = event.message.id;
   event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
     console.log(msg);
+    setTimeout(()=>{
+        var userId = id;
+        var sendMsg = '快教我打字';
+        bot.push(userId,sendMsg);
+        console.log('send: '+sendMsg);
+    },5000);
   }).catch(error=>{
       console.log(error);
   });
-  setTimeout(()=>{
-    var userId = id;
-    var sendMsg = '快教我打字';
-    bot.push(userId,sendMsg);
-    console.log('send: '+sendMsg);
-},5000);
 });
 
 const app = express();
