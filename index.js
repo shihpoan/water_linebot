@@ -50,7 +50,7 @@ function _bot(){
             var replyMsg = '';
             if(msg.indexOf('PM2.5') != -1){ //indexOF == -1 代表尋找的東西不存在
                 pm.forEach((e, i)=>{
-                    console.log(event);
+                    //console.log(event);
                     if(msg.indexOf(e[0]) != -1){
                         replyMsg = e[0] + '的PM2.5數值是' + e[1];
                     }
