@@ -17,9 +17,9 @@ bot.on('message', function (event) {
   event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
     console.log(msg);
     setTimeout(()=>{
-        //var userId = 'Uf53deac4585024b18b8f0763cccf28d3';
+        var userId = 'Uf53deac4585024b18b8f0763cccf28d3';
         var sendMsg = '快教我打字';
-        bot.push(sendMsg);
+        bot.push(userId,sendMsg);
         console.log('send: '+sendMsg);
     },5000);
   }).catch(error=>{
