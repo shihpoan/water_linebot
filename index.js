@@ -13,11 +13,18 @@ bot.on('message', function (event) {
   // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
   console.log(event);
   var msg = event.message.text;
+  var id = event.message.id;
   event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
     console.log(msg);
   }).catch(error=>{
       console.log(error);
   });
+  setTimeout(function(){
+    var userId = id;
+    var sendMsg = '快教我打字';
+    bot.push(userId,sendMsg);
+    console.log('send: '+sendMsg);
+},5000);
 });
 
 const app = express();
