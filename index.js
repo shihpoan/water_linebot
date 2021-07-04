@@ -63,7 +63,7 @@ function _bot(){
             else{
                 console.log(event);
                 var msg = event.message.text;
-                var id = event.source.userId;
+                var id = event.source.groupId;
                 event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
                     console.log(msg);
                     setTimeout(()=>{
