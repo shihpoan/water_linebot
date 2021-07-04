@@ -71,8 +71,8 @@ function _bot(){
 //抓取pm2.5的JSON資料
 function _getJSON(){
     clearTimeout(timer);
-    getJSON('https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&sort=ImportDate%20desc&format=json', (error, response)=>{
-        response.forEach((e, i)=>{
+    getJSON('https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&sort=ImportDate%20desc&format=json', function(error, response){
+        response.forEach(function(e, i){
             pm[i] = [];
             pm[i][0] = e.SiteName;
             pm[i][1] = e['PM2.5'] * 1;
