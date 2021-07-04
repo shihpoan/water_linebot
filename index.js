@@ -10,7 +10,7 @@ let bot = linebot({
 // 當有人傳送訊息給 Bot 時
 bot.on('message', function (event) {
   // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-  event.reply(`你說了 ${event.message.text}`);
+  event.reply(`媽我還不會打字啦嗚嗚`);
 });
 
 // Bot 所監聽的 webhook 路徑與 port，heroku 會動態存取 port 所以不能用固定的 port，沒有的話用預設的 port 5000
