@@ -16,23 +16,23 @@ _getJSON();
 
 _bot();
 // 當有人傳送訊息給 Bot 時
-bot.on('message', function (event) {
-  // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-  console.log(event);
-  var msg = event.message.text;
-  var id = event.source.userId;
-  event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
-    console.log(msg);
-    setTimeout(()=>{
-        var userId = id;
-        var sendMsg = '快教我打字';
-        bot.push(userId,sendMsg);
-        console.log('send: '+sendMsg);
-    },5000);
-  }).catch(error=>{
-      console.log(error);
-  });
-});
+// bot.on('message', function (event) {
+//   // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
+//   console.log(event);
+//   var msg = event.message.text;
+//   var id = event.source.userId;
+//   event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
+//     console.log(msg);
+//     setTimeout(()=>{
+//         var userId = id;
+//         var sendMsg = '快教我打字';
+//         bot.push(userId,sendMsg);
+//         console.log('send: '+sendMsg);
+//     },5000);
+//   }).catch(error=>{
+//       console.log(error);
+//   });
+// });
 
 const app = express();
 const linebotParser = bot.parser();
@@ -58,8 +58,24 @@ function _bot(){
                     }
                 });
             }
+            else{
+                console.log(event);
+                var msg = event.message.text;
+                var id = event.source.userId;
+                event.reply(`媽我還不會打字啦嗚嗚`).then((data)=>{
+                    console.log(msg);
+                    setTimeout(()=>{
+                        var userId = id;
+                        var sendMsg = '快教我打字';
+                        bot.push(userId,sendMsg);
+                        console.log('send: '+sendMsg);
+                    },5000);
+                }).catch(error=>{
+                    console.log(error);
+                });
+            }
 
-            event,reply(replyMsg).then((data)=>{
+            event.reply(replyMsg).then((data)=>{
                 console.log(replyMsg);
             }).catch((error)=>{
                 console.log('error');
