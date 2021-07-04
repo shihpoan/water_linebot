@@ -43,7 +43,7 @@ bot.listen('/', process.env.PORT || 5000, function () {
   console.log('機器人上線啦！');
 });
 
-_bot() = ()=>{
+function _bot(){
     bot.on('message', (event)=>{
         if(event.message.type == 'text'){
             var msg = event.message.text;
