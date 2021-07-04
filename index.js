@@ -53,11 +53,11 @@ function _bot(){
                     //console.log(event);
                     if(msg.indexOf(e[0]) != -1){
                         replyMsg = e[0] + '的PM2.5數值是' + e[1];
+                        console.log(e[0]);
                     }
                 });
                 if(replyMsg == ''){
                     replyMsg = '媽你打錯地址了';
-                    console.log(e[0]);
                 }
             }
             else{
