@@ -50,7 +50,7 @@ function _bot(){
             var replyMsg = '';
             if(msg.indexOf('PM2.5') != -1){ //indexOF == -1 代表尋找的東西不存在
                 pm.forEach((e, i)=>{
-                    console.log(e[0]);
+                    console.log(event);
                     if(msg.indexOf(e[0]) != -1){
                         replyMsg = e[0] + '的PM2.5數值是' + e[1];
                     }
@@ -89,7 +89,7 @@ function _bot(){
 function _getJSON(){
     clearTimeout(timer);
     getJSON('https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&sort=ImportDate%20desc&format=json', function(error, response){
-        Array.prototype.forEach.call(response,function(e, i){
+        response['record'].forEach(function(e, i){
             pm[i] = [];
             pm[i][0] = e.SiteName;
             pm[i][1] = e['PM2.5'] * 1;
